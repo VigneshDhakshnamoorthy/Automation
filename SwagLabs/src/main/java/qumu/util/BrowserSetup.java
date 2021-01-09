@@ -59,7 +59,7 @@ public class BrowserSetup extends LoadProp {
 		case "firefoxheadless":
 			FirefoxOptions firefoxOptions = new FirefoxOptions();
 			firefoxOptions.addArguments("--headless");
-            WebDriverManager.firefoxdriver().setup();
+			WebDriverManager.firefoxdriver().setup();
             driver = new FirefoxDriver(firefoxOptions);
             break;
             
