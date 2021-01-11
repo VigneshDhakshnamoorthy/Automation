@@ -11,22 +11,6 @@ public class LoadProp {
 	public static Properties prop = new Properties();;
 	static FileInputStream input;
 	
-	public static String getURL(String key) {
-		
-		try {
-			input = new FileInputStream(PropLoc);
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		}
-		try {
-			prop.load(input);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}			
-		return prop.get(key).toString();
-	}
-
-
 
 	public static String getproperty(String key) {
 	
@@ -43,18 +27,5 @@ public class LoadProp {
 		return prop.get(key).toString();
 	}
 	
-	public static  String getScreenshotlocation(String key) {
-	
-		try {
-			input = new FileInputStream(PropLoc);
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		}
-		try {
-			prop.load(input);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}			
-		return prop.get(key).toString();
-	}
+
 }

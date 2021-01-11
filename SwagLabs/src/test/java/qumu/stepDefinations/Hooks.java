@@ -38,7 +38,7 @@ public class Hooks extends BrowserSetup {
 		String timeStamp = new SimpleDateFormat("dd-MM-yyyy_HH-mm-ss").format(Calendar.getInstance().getTime());
 		String screenShotFilename = timeStamp+" -- "+Browsername+" -- "+driver.getTitle()+".png";
         File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-        File desFile = new File(getScreenshotlocation("ScreenshotLocation")+screenShotFilename);
+        File desFile = new File(getproperty("ScreenshotLocation")+screenShotFilename);
         try {
             FileUtils.copyFile(scrFile, desFile);
         } catch (IOException e) {
