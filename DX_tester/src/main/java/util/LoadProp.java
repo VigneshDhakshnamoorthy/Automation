@@ -8,7 +8,7 @@ import java.util.Properties;
 public class LoadProp {
 
 	static String PropLoc = "./src/test/resources/TestData/TestData.properties";
-	public static Properties prop = new Properties();;
+	public static Properties prop = new Properties();
 	static FileInputStream input;
 	
 	public static String getproperty(String key) {

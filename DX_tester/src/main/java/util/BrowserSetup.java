@@ -19,13 +19,13 @@ public class BrowserSetup extends LoadProp {
 	public static WebDriver driver;
 	public static String Browsername;
 	public static Properties prop; 
-	public JavascriptExecutor executor = (JavascriptExecutor)driver;
+	
 
 	
 	public static String getURL() {
 		
 		String Dir = System.getProperty("user.dir");
-		String html = getproperty("html").toString();
+		String html = getproperty("html");
 		String URL = Dir+html;
 		return URL;
 

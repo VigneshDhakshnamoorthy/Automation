@@ -5,16 +5,15 @@ import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(
 
-		features="src/test/resources/Features",
+		features="@rerun/failed_scenarios.txt",
 		glue= {"qumu.stepDefinations"},
 		monochrome = true,
 		dryRun=false,
 		plugin = {
-				"pretty", "html:target/cucumber-report/single",
-				"rerun:rerun/failed_scenarios.txt"}
+				"pretty", "html:target/cucumber-report/single"}
 
 		)
 
-public class TestRunner extends AbstractTestNGCucumberTests {
+public class FailureReRunner extends AbstractTestNGCucumberTests {
 
 }
