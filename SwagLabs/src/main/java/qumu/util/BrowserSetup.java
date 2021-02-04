@@ -25,7 +25,7 @@ public class BrowserSetup extends LoadProp {
 	public static String getURL() {
 		
 		String URL=getproperty("URL").toString();
-		return URL;
+		return URL; 
 
 	}
 	
