@@ -15,7 +15,7 @@ public class CheckoutInform extends BrowserSetup {
 	
 	@FindBy(id="first-name") WebElement firstname;
 	@FindBy(id="last-name") WebElement lastname;
-	@FindBy(id="postal-code") WebElement postalcode;
+	@FindBy(id="postal-cod") WebElement postalcode;
 	@FindBy(xpath="//*[@class=\"btn_primary cart_button\"]") WebElement ClickContinue;
 	
 	public void EnterFirstName(String Fname) {

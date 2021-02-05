@@ -35,16 +35,22 @@ public class Hooks extends BrowserSetup {
 		} catch (InterruptedException e1) {
 			e1.printStackTrace();
 		}
-		String timeStamp = new SimpleDateFormat("dd-MM-yyyy_HH-mm-ss").format(Calendar.getInstance().getTime());
-		String screenShotFilename = timeStamp+" -- "+Browsername+" -- "+driver.getTitle()+".png";
-        File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-        File desFile = new File(getproperty("ScreenshotLocation")+screenShotFilename);
-        try {
-            FileUtils.copyFile(scrFile, desFile);
-        } catch (IOException e) {
-            System.out.println(e.getMessage());
-        }
-        
+		if (scenario.isFailed()) {
+			String timeStamp = new SimpleDateFormat("dd-MM-yyyy_HH-mm-ss").format(Calendar.getInstance().getTime());
+			String screenShotFilename = timeStamp+" -- "+Browsername+" -- "+driver.getTitle()+".png";
+	        File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+	        File desFile = new File(getproperty("ScreenshotLocation")+screenShotFilename);
+	        try {
+	            FileUtils.copyFile(scrFile, desFile);
+	        } catch (IOException e) {
+	            System.out.println(e.getMessage());
+	        }
+	        
+			
+		} else {
+			System.out.println("---------------Test Successful------------------------");
+		}
+	
         driver.quit();
        
     }
