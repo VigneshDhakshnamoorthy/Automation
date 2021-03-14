@@ -81,6 +81,7 @@ public class StepDefination extends BrowserSetup {
 		{
 	    cart.removeProduct(removeproductdata.get(i).toString());
 		}
+		Product.clickonCart();
 	}
 
 	@Given("I click on the CHECKOUT button")

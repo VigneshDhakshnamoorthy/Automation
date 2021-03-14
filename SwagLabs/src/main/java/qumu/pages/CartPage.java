@@ -17,7 +17,7 @@ public class CartPage extends BrowserSetup {
 	}
 
 
-	@FindBy(xpath="//*[@class=\"btn_action checkout_button\"]") WebElement clickoncheckout;
+	@FindBy(xpath="//*[@class='cart_footer']/*[text()='CHECKOUT']") WebElement clickoncheckout;
 	@FindBy(xpath="//*[@class=\"btn_secondary btn_inventory\"]") WebElement RemoveCart;
 	@FindBy(xpath="//*[@id=\"inventory_item_container\"]/div/button") WebElement Back;
 	@FindBy(xpath="//*[contains(@class,'cart_quantity')]") List<WebElement> count;
@@ -40,14 +40,8 @@ public class CartPage extends BrowserSetup {
 
 	public void clickCheckout() {
 		
-		try {
-			Thread.sleep(1000);
-		} catch (InterruptedException e) {
-			
-			e.printStackTrace();
-		}
-		executor.executeScript("arguments[0].click();",clickoncheckout);
-
+		BrowserSetup.WaitCom(clickoncheckout);
+		
 	}
 
 
