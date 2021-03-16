@@ -7,6 +7,7 @@ public class Fibonacci {
 	public static void fibon() {
 		
 		int c = 0;
+		@SuppressWarnings("resource")
 		Scanner scan = new Scanner(System.in);
 		System.out.println("Enter First Number : ");
 		int a = scan.nextInt();
