@@ -2,8 +2,6 @@ package javaTest;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collection;
-import java.util.List;
 
 public class SortArray {
 	 public static int findIndex(int arr[], int t)
