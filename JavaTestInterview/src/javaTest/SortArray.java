@@ -1,90 +1,60 @@
 package javaTest;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 
 public class SortArray {
-	 public static int findIndex(int arr[], int t)
-	    {
-	 
-	        int index = Arrays.binarySearch(arr, t);
-	        return (index < 0) ? -1 : index;
-	    }
+
+	
+	
 	public static void main(String[] args) {
 		
-		int[] arr = new int[] {78, 34, 1, 3, 90, 34, -4, 6, 55, -20, -65};  
-		int[] newArr = new int[arr.length];
-		System.out.println("Array elements after sorting:");  
-		//sorting logic  
-		for (int i = 0; i < arr.length; i++)   
-		{  
-		for (int j = i + 1; j < arr.length; j++)   
-		{  
-		int tmp = 0;  
-		if (arr[i] > arr[j])   
-		{  
-		tmp = arr[i];  
-		arr[i] = arr[j];  
-		arr[j] = tmp;  
-		}  
-		}  
-		//prints the sorted element of the array  
-		System.out.print(arr[i]);
-		System.out.print(" ");
-		}  	
-			
-		System.out.println();
-		for (int i = 0; i < arr.length; i++)   
-		{ 
-			if (arr[i]<0) {
-				newArr[i] = arr[i]*-1;
+		int[] arr = new int[] {78, 34, 1, 3, 90, -4, 6, 55, -20, -65, -1};  
+		int[] newArr = new int[arr.length+1];
+		int[] newArr2 = new int[arr.length];
+		
+		for ( int i =0 ; i <arr.length;i++) {
+			if(arr[i]>0) 
+			{
+				newArr[i]=arr[i];
 			}else {
-				newArr[i] = arr[i];
+				newArr[i]=arr[i]*-1;
 			}
+		
 		}
-		Arrays.sort(newArr);
-		for (int i = 0; i < newArr.length; i++)   
-		{
-			System.out.print(newArr[i]);
+		for (int a : arr) {
+			System.out.print(a);
 			System.out.print(" ");
-			
-			
-		}
-	
-		ArrayList<Integer> arrList = new ArrayList<Integer>();
-		for (int i = 0; i < arr.length; i++)   
-		{ 
-			arrList.add(arr[i]);
-		}
-		
-		
-		for (int i = 0; i < newArr.length; i++)   
-		{
-		
-			if (arrList.contains(newArr[i]) )
-			{
-				continue;
-			}
-			else
-			{
-				newArr[i] = newArr[i]*-1;
-			}
-			
-			
 		}
 		System.out.println();
-		for (int arrl : newArr)   
-		{
-			System.out.print(arrl);
+		Arrays.sort(newArr);
+		for (int a : newArr) {
+			System.out.print(a);
 			System.out.print(" ");
-			
-			
 		}
+		System.out.println();
+		for (int ab : arr) {
+			if (Arrays.binarySearch(newArr, ab)>=0) {
+			
+
+			newArr[Arrays.binarySearch(newArr, ab)]=ab;
+
+			}
+			else {
+
+				newArr[Arrays.binarySearch(newArr, ab*-1)]=ab;
+	
 		
-		
+			}
 		}
+		for (int a : newArr) {
+			System.out.print(a);
+			System.out.print(" ");
+		}
+
 		
-		
+	
+	}
+
 	  
 }
 
