@@ -11,7 +11,7 @@ public class SortArray {
 		int[] arr = new int[] {78, 34, 1, 3, 90, -4, 6, 55, -20, -65, -1};  
 		int[] newArr = new int[arr.length+1];
 		int[] newArr2 = new int[arr.length];
-		
+		System.out.println(" Normal Array ");
 		for ( int i =0 ; i <arr.length;i++) {
 			if(arr[i]>0) 
 			{
@@ -27,6 +27,7 @@ public class SortArray {
 		}
 		System.out.println();
 		Arrays.sort(newArr);
+		System.out.println(" Sorted Array ");
 		for (int a : newArr) {
 			System.out.print(a);
 			System.out.print(" ");
@@ -46,6 +47,7 @@ public class SortArray {
 		
 			}
 		}
+		System.out.println(" Final Array ");
 		for (int a : newArr) {
 			System.out.print(a);
 			System.out.print(" ");
