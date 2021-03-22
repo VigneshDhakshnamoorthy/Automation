@@ -22,7 +22,7 @@ public class apiTest_1 {
 	public void getWeather_short() {
 		
 		
-		System.out.println(given().get("https://reqres.in/api/users?page=2").);
+		System.out.println(given().get("https://reqres.in/api/users?page=2"));
 		
 		
 	}
