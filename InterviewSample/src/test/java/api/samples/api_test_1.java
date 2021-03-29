@@ -1,6 +1,5 @@
 package api.samples;
 import static io.restassured.RestAssured.*;
-import static java.util.concurrent.TimeUnit.MILLISECONDS;
 
 
 public class api_test_1 {
