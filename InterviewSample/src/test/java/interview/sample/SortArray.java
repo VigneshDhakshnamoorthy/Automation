@@ -65,8 +65,7 @@ public class SortArray {
 			System.out.print(" ");
 		}
 
-		
-	
+			
 	}
 
 	  
