@@ -24,7 +24,21 @@ public class SortArray {
 			System.out.print(" ");
 		}
 		System.out.println();
-		Arrays.sort(newArr);
+		
+		int temp;
+		for ( int i = 0 ; i < newArr.length ; i++) {
+			for ( int j = 0 ; j < newArr.length; j++) {
+				
+				if ( newArr[i] < newArr[j]) {
+					temp = newArr[i];
+					newArr[i]=newArr[j];
+					newArr[j]=temp;
+				}else {
+					continue;
+						}
+		}
+
+		}
 		System.out.println(" Sorted Array ");
 		for (int a : newArr) {
 			System.out.print(a);
