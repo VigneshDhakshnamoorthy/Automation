@@ -39,6 +39,7 @@ public class StepDefination extends BrowserSetup {
 		Main.Currency();
 	}
 
+	
 	@Given("Need to verify the total balance matches the sum of the values")
 	public void need_to_verify_the_total_balance_matches_the_sum_of_the_values() {
 		Main.Verify_TotalBal_Values();
