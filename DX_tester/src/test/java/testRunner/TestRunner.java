@@ -7,6 +7,7 @@ import io.cucumber.testng.CucumberOptions;
 		
 		features="src/test/resources/Features",
 		glue= {"stepDefinations"},
+		plugin = {"json:target/cucumber.json"},
 		monochrome = true,
 		dryRun=false	
 		
