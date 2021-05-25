@@ -23,7 +23,6 @@ public class Anagram {
 			System.out.println(s1 + " and " + s2 + " are not anagrams");  
 		}  
 	}  
-
 	public static void main(String[] args) {  
 		isAnagram("Keep", "Peek");  
 		isAnagram("Mother In Law", "Hitler Woman");  
