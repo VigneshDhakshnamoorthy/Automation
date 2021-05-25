@@ -8,8 +8,12 @@ import io.cucumber.testng.CucumberOptions;
 		features="src/test/resources/Features",
 		glue= {"stepDefinations"},
 		monochrome = true,
-		dryRun=false	
-		
+		dryRun=false,
+		plugin = {
+				"pretty", "html:target/cucumber-report/single",
+				"rerun:rerun/failed_scenarios.txt"}
+
+				
 		)
 
 public class TestRunner extends AbstractTestNGCucumberTests {
