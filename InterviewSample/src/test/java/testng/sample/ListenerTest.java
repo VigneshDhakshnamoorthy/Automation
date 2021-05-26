@@ -20,7 +20,7 @@ public class ListenerTest implements ITestListener {
 	    @Override  
 	    public void onTestFailure(ITestResult result) {  
 	        // TODO Auto-generated method stub  
-	        System.out.println("Failure of test cases and its details are : "+result.getName());  
+	        System.out.println("Failure of test cases and its details are : "+result.getName()+" // "+result.getThrowable());  
 	    }  
 	  
 	    @Override  
@@ -31,19 +31,18 @@ public class ListenerTest implements ITestListener {
 	  
 	    @Override  
 	    public void onTestFailedButWithinSuccessPercentage(ITestResult result) {  
-	        // TODO Auto-generated method stub  
-	        System.out.println("Failure of test cases and its details are : "+result.getName());  
+	        
 	    }  
 	  
 	    @Override  
 	    public void onStart(ITestContext context) {  
-	        // TODO Auto-generated method stub  
+	        System.out.println("Test Started");
 	          
 	    }  
 	  
 	    @Override  
 	    public void onFinish(ITestContext context) {  
-	        // TODO Auto-generated method stub  
+	        System.out.println("Test End"); 
 	          
 	    }  
 }
