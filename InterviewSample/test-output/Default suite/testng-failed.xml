@@ -5,7 +5,8 @@
     <classes>
       <class name="testng.sample.TestcasesTest">
         <methods>
-          <include name="testtopassTest"/>
+          <include name="testtofailTest2"/>
+          <include name="testtofailTest1"/>
         </methods>
       </class> <!-- testng.sample.TestcasesTest -->
     </classes>
