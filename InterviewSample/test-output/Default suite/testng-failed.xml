@@ -7,6 +7,9 @@
         <methods>
           <include name="testtofailTest2"/>
           <include name="testtofailTest1"/>
+          <include name="testtopassTest1"/>
+          <include name="testtopassTest3"/>
+          <include name="testtopassTest2"/>
         </methods>
       </class> <!-- testng.sample.TestcasesTest -->
     </classes>
