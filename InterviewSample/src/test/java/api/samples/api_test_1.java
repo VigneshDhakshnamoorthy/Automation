@@ -43,7 +43,6 @@ public class api_test_1 {
 		given().when().get(url).then().log()
 		.all();
 		
-		
 	}
 
 
