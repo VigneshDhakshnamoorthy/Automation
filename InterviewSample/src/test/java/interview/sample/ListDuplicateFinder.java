@@ -7,12 +7,14 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 public class ListDuplicateFinder {
 	
 	public static void duplistfind(List<String> names) {
 		Set<String> nameset = new HashSet<String>(); 
 		Map<String, Integer> namemap = new HashMap<String, Integer>();
+		
 		
 		for (String name : names) {
 			nameset.add(name);
@@ -25,9 +27,10 @@ public class ListDuplicateFinder {
 					
 		}
 		System.out.println(namemap);
-
 		
-		for (String named : nameset) {
+
+		Set<String> namesets = names.stream().collect(Collectors.toSet());
+		for (String named : namesets) {
 			
 			System.out.println(named+": "+Collections.frequency(names, named));
 			

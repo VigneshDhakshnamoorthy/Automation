@@ -1,9 +1,7 @@
-		package qumu.util;
+package browser.setup;
 
+import java.util.concurrent.TimeUnit;
 
-import java.util.Properties;
-
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -16,27 +14,16 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class BrowserSetup extends LoadProp {
-
-	
+public class browser_class {
 	public static WebDriver driver;
-	public static String Browsername;
-	public static Properties prop; 
-	public JavascriptExecutor executor = (JavascriptExecutor)driver;
+
 
 	
-	public static String getURL() {
+	public static WebDriver getBrowser(String browser) {
 		
-		String URL=getproperty("URL").toString();
-		return URL; 
-
-	}
-	
-	public static void getBrowser(String URL) {
 		
-		Browsername=getproperty("browser");
 		
-		switch (Browsername.toLowerCase()) {
+		switch (browser.toLowerCase()) {
 		case "chrome":
 			WebDriverManager.chromedriver().setup();
 			driver = new ChromeDriver();
@@ -70,10 +57,9 @@ public class BrowserSetup extends LoadProp {
 			System.out.println("Enter Browser Name From chrome,firefox,edge,chromeHeadless,firefoxHeadless");
 			break;
 		}
-	
-		System.out.println("Opening "+Browsername+" Browser...");
-		System.out.println();		
-		driver.get(URL);
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		return driver;
 	
 		
 			
@@ -89,7 +75,4 @@ public class BrowserSetup extends LoadProp {
 
 	
 
-	
-	
-	
 }
