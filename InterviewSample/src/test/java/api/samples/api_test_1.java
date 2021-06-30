@@ -10,12 +10,12 @@ import io.restassured.response.Response;
 
 
 public class api_test_1 {
-
+	String url = "https://reqres.in/api/users?page=2";
 	@Test (priority=2)
 	public void rest_api_1() {
-		
+
 		System.out.println("\nFull form ");
-		Response rep = RestAssured.get("https://reqres.in/api/users?page=2");
+		Response rep = RestAssured.get(url);
 		System.out.println("Status Code : "+rep.getStatusCode());
 		System.out.println("Time : "+rep.getTime());
 		System.out.println(rep.getBody().asString());
@@ -26,17 +26,25 @@ public class api_test_1 {
 		}
 
 	}
-	 
+
 	@Test (priority=1)
 	public void rest_api_2() {
 		System.out.println("\nEmail List by short form ");
-		List email = get("https://reqres.in/api/users?page=2").jsonPath().getList("data.email");
+		List<String> email = get(url).jsonPath().getList("data.email");
 		for (Object ema : email) {
-			System.out.println(ema.toString().replace("@reqres.in", ""));
+			System.out.println(ema.toString());
 		}
+
+	}
+	@Test (priority=3)
+	public void rest_api_3() {
+		System.out.println("\nShort form ");
+		given().when().get(url).then().assertThat().statusCode(200);
+		given().when().get(url).then().log()
+		.all();
+		List<String> email = get(url).path(ull)
 		
 	}
-
 
 
 
