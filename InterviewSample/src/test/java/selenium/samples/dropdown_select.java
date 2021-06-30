@@ -34,7 +34,6 @@ public class dropdown_select {
 		Iterator<String> iterator = windows.iterator();
 		driver.switchTo().window(iterator.next());
 		driver.quit();
-
 	}
 	
 
