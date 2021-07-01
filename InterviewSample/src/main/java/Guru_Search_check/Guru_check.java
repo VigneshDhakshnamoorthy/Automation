@@ -6,9 +6,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.interactions.Action;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -25,6 +22,7 @@ public class Guru_check {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		WebElement filter_btn = driver.findElement(By.xpath("//div[@class='filterLayout__btn']/button[@class='module_btn outline_btn outline_btn--secondary lonely_btn']"));
 		wait.until(ExpectedConditions.visibilityOf(filter_btn)).click();
+		
 
 		List<WebElement> country = driver.findElements(By.xpath("//div[@class='rhythmMargin1']/following-sibling::div/ul/li"));
 		for ( WebElement li : country) {
