@@ -19,7 +19,7 @@ public class api_test_1 {
 		System.out.println("Status Code : "+rep.getStatusCode());
 		System.out.println("Time : "+rep.getTime());
 		System.out.println(rep.getBody().asString());
-		List email = rep.jsonPath().getList("data.email");
+		List<Object> email = rep.jsonPath().getList("data.email");
 		System.out.println("\nEmail List");
 		for (Object ema : email) {
 			System.out.println(ema.toString().replace("@reqres.in", ""));
