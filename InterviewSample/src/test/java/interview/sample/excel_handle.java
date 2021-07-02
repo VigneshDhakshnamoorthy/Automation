@@ -2,9 +2,7 @@ package interview.sample;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import java.io.IOException;
 import java.util.List;
 
 import org.apache.poi.xssf.usermodel.*;
@@ -40,6 +38,7 @@ public class excel_handle {
         	
         	
         }
+        workbook.close();
         driver.quit();
         FileOutputStream rediff_excel = new FileOutputStream(File_loc);
 		workbook.write(rediff_excel);
@@ -55,7 +54,7 @@ public class excel_handle {
 			System.out.println(read_cell);
 		}
 		
-		
+		read_book.close();
 		
 		
 	}
