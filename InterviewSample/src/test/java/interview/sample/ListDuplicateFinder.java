@@ -48,6 +48,7 @@ public class ListDuplicateFinder {
     	names.add("Vignesh");
         ListDuplicateFinder.duplistfind(names);
         System.out.println();
+        System.out.println(names.contains("dfsd"));
         
         		
       

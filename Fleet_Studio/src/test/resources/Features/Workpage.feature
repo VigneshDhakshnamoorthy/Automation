@@ -3,8 +3,11 @@ Feature: fleetstudio page
   Fleet Studio's Work Page Automation 
  	
  	Scenario: Work Page Automation
- 	 	When filter by name and check projects count
- 	 		| filter        | count     |
-      | Product Dev 	| 7 				|
-      | QA 						| 2 				|
-  
+ 		Given navigate to workpage
+ 	 	When filter by "Product Dev" and check projects count is 7
+ 	 	Then check "Kimberly-Clark" is display in this filter
+ 	 	When filter by "QA" and check projects count is 2
+	 	Then check "BMW" is display in this filter
+ 	 	Then navigate to homepage
+
+ 
