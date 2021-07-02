@@ -1,4 +1,4 @@
-package Page_auto;
+package stepDefinations;
 
 import java.io.File;
 import java.io.IOException;

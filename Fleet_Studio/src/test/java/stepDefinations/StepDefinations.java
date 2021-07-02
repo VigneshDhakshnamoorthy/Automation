@@ -1,4 +1,4 @@
-package Page_auto;
+package stepDefinations;
 
 import org.openqa.selenium.support.PageFactory;
 
@@ -7,7 +7,7 @@ import pages.HomePage;
 import pages.WorkPage;
 import utils.BrowserSetup;
 
-public class fleet_studio_stepDef extends BrowserSetup {
+public class StepDefinations extends BrowserSetup {
 	HomePage homepage;
 	WorkPage workpage;
 	
