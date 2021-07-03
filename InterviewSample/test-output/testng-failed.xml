@@ -3,19 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="testng.sample.TestcasesTest">
+      <class name="interview.sample.test_method_name">
         <methods>
-<<<<<<< HEAD
-          <include name="rest_api_3"/>
-=======
-          <include name="testtofailTest2"/>
-          <include name="testtofailTest1"/>
-          <include name="testtopassTest1"/>
-          <include name="testtopassTest3"/>
-          <include name="testtopassTest2"/>
->>>>>>> branch 'master' of https://github.com/VigneshDhakshnamoorthy/Automation.git
+          <include name="test3"/>
+          <include name="test2"/>
         </methods>
-      </class> <!-- testng.sample.TestcasesTest -->
+      </class> <!-- interview.sample.test_method_name -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
