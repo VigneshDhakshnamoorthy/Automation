@@ -79,15 +79,7 @@ public class BrowserSetup extends LoadProp {
 			
 	}
 
-	
-	public static void WaitCom(WebElement we) {
-		
-		WebDriverWait wait=new WebDriverWait(driver, 20);
-		wait.until(ExpectedConditions.visibilityOf(we)).click();
-	}
-	
 
-	
 
 	
 	

@@ -17,40 +17,26 @@ public class Hooks extends BrowserSetup {
 	
 	
 	@Before
-	public static void initializeTest() {
+	public static void initializeTest(Scenario scenario) {
 		getBrowser(getURL());
 		driver.manage().deleteAllCookies();
 		driver.manage().window().maximize();
-		driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		driver.manage().timeouts().setScriptTimeout(10, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+
+	
 
 	}
 
 	
 	@After
 	public void screenshot(Scenario scenario) {
-		try {
-			Thread.sleep(1000);
-		} catch (InterruptedException e1) {
-			e1.printStackTrace();
-		}
 		if (scenario.isFailed()) {
-			String timeStamp = new SimpleDateFormat("dd-MM-yyyy_HH-mm-ss").format(Calendar.getInstance().getTime());
-			String screenShotFilename = timeStamp+" -- "+Browsername+" -- "+driver.getTitle()+".png";
-	        File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-	        File desFile = new File(getproperty("ScreenshotLocation")+screenShotFilename);
-	        try {
-	            FileUtils.copyFile(scrFile, desFile);
-	        } catch (IOException e) {
-	            System.out.println(e.getMessage());
-	        }
-	        
-			
+			final byte[] screenshot = ((TakesScreenshot)driver).getScreenshotAs(OutputType.BYTES);
+	        scenario.attach(screenshot, "image/png", "image"); 
 		} else {
 			System.out.println("---------------Test Successful------------------------");
 		}
-	
+		
         driver.quit();
        
     }
