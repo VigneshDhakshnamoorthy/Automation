@@ -3,6 +3,7 @@ package api.samples;
 import static io.restassured.RestAssured.*;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class guru_api {
@@ -65,8 +66,14 @@ public class guru_api {
 	public static void getSpecificPartOfResponseBody(){
 		System.out.println();
 		System.out.println("----------result.statements.AMOUNT----------");
-		ArrayList<String> amounts = when().get(url).then().extract().path("result.statements.AMOUNT") ;
-		System.out.println(amounts);
+		List<Object> amounts = when().get(url).jsonPath().getList("result.statements.AMOUNT") ;
+		int sumOfAll=0;
+		for(Object a:amounts){
+
+		    System.out.println("The amount value fetched is "+a);
+		    sumOfAll=sumOfAll+Integer.valueOf(a.toString());
+		}
+		System.out.println("The total amount is "+sumOfAll);
 	
 	
 	
