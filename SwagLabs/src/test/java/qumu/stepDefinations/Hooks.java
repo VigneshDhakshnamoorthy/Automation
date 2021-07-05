@@ -1,11 +1,6 @@
 package qumu.stepDefinations;
 
-import java.io.File;
-import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.concurrent.TimeUnit;
-import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 
@@ -30,27 +25,13 @@ public class Hooks extends BrowserSetup {
 	
 	@After
 	public void screenshot(Scenario scenario) {
-		try {
-			Thread.sleep(1000);
-		} catch (InterruptedException e1) {
-			e1.printStackTrace();
-		}
 		if (scenario.isFailed()) {
-			String timeStamp = new SimpleDateFormat("dd-MM-yyyy_HH-mm-ss").format(Calendar.getInstance().getTime());
-			String screenShotFilename = timeStamp+" -- "+Browsername+" -- "+driver.getTitle()+".png";
-	        File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-	        File desFile = new File(getproperty("ScreenshotLocation")+screenShotFilename);
-	        try {
-	            FileUtils.copyFile(scrFile, desFile);
-	        } catch (IOException e) {
-	            System.out.println(e.getMessage());
-	        }
-	        
-			
+			final byte[] screenshot = ((TakesScreenshot)driver).getScreenshotAs(OutputType.BYTES);
+	        scenario.attach(screenshot, "image/png", "image"); 
 		} else {
 			System.out.println("---------------Test Successful------------------------");
 		}
-	
+		
         driver.quit();
        
     }

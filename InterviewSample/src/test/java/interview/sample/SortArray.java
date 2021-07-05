@@ -1,8 +1,6 @@
 package interview.sample;
 
-import java.util.Arrays;
-
-import java.lang.reflect.Method;  
+import java.util.Arrays;  
 
 public class SortArray {
 
