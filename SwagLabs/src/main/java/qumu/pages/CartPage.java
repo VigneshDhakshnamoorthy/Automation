@@ -17,9 +17,9 @@ public class CartPage extends BrowserSetup {
 	}
 
 
-	@FindBy(xpath="//*[@class='cart_footer']/*[text()='CHECKOUT']") WebElement clickoncheckout;
-	@FindBy(xpath="//*[@class=\"btn_secondary btn_inventory\"]") WebElement RemoveCart;
-	@FindBy(xpath="//*[@id=\"inventory_item_container\"]/div/button") WebElement Back;
+	@FindBy(xpath="//button[@id='checkout']") WebElement clickoncheckout;
+	@FindBy(xpath="//button[@class='btn btn_secondary btn_small btn_inventory']") WebElement RemoveCart;
+	@FindBy(xpath="//button[@class='btn btn_secondary back btn_large inventory_details_back_button']") WebElement Back;
 	@FindBy(xpath="//*[contains(@class,'cart_quantity')]") List<WebElement> count;
 	public void QTYcounitem(int itemcount) {
 		

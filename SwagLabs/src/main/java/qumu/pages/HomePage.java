@@ -14,10 +14,10 @@ public class HomePage extends BrowserSetup {
 		PageFactory.initElements(driver, this);
 	}
 	
-	@FindBy(xpath="//*[contains(@class,'fa-layers-counter shopping_cart_badge')]") WebElement Cart_item_count;
-	@FindBy(xpath="//*[@id=\"shopping_cart_container\"]/a") WebElement clickonCart;
-	@FindBy(xpath="//*[@class=\"btn_primary btn_inventory\"]") WebElement AddCart;
-	@FindBy(xpath="//*[@id=\"inventory_item_container\"]/div/button") WebElement Back;
+	@FindBy(xpath="//span[@class='shopping_cart_badge']") WebElement Cart_item_count;
+	@FindBy(xpath="//a[@class='shopping_cart_link']") WebElement clickonCart;
+	@FindBy(xpath="//button[@class='btn btn_primary btn_small btn_inventory']") WebElement AddCart;
+	@FindBy(xpath="//button[@class='btn btn_secondary back btn_large inventory_details_back_button']") WebElement Back;
 	
 	public void AddProduct(String ProNam) {
 				
