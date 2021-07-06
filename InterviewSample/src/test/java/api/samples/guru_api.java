@@ -2,13 +2,7 @@ package api.samples;
 
 import static io.restassured.RestAssured.*;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.concurrent.TimeUnit;
-
-import org.json.simple.JSONObject;
-
-import io.restassured.path.xml.XmlPath;
 
 public class guru_api {
 	public static void main(String[] args) {
@@ -70,7 +64,6 @@ public class guru_api {
 	public static void getSpecificPartOfResponseBody(){
 		System.out.println();
 		System.out.println("----------result.statements.AMOUNT----------");
-		XmlPath path  = when().get(url).then().extract().path("result.statements.AMOUNT");
 
 	
 
