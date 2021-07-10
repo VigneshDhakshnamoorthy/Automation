@@ -16,7 +16,10 @@ public class database_test_1 {
     	String password = "manoj.111";
 
       //  String connectionUrl = "jdbc:sqlserver://192.168.137.15:1433;databaseName=Shopping_Zone;user=sa;password=manoj.111";
-        
+       
+    //  	String SQL = "SELECT * FROM Shopping_Zone.dbo.f_scheme_master";
+    	
+    	
         String connectionUrl ="jdbc:sqlserver://"+server+":"+
         						port+
         						";databaseName="+database+
@@ -25,18 +28,17 @@ public class database_test_1 {
 
         try (Connection con = DriverManager.getConnection(connectionUrl); Statement stmt = con.createStatement();) {
             
-      //  	String SQL = "SELECT * FROM Shopping_Zone.dbo.f_scheme_master";
+    
             
         	String SQL = "SELECT * FROM "+database+"."+table_name;
             
             ResultSet rs = stmt.executeQuery(SQL);
 
-            // Iterate through the data in the result set and display it.
-            while (rs.next()) {
+          while (rs.next()) {
                 System.out.println(rs.getString("SCHEME_NAME"));
             }
         }
-        // Handle any errors that may have occurred.
+
         catch (SQLException e) {
             e.printStackTrace();
         }
