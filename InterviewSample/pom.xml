@@ -51,18 +51,6 @@
 			<artifactId>selenium-java</artifactId>
 			<version>3.141.59</version>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-java -->
-		<dependency>
-			<groupId>io.cucumber</groupId>
-			<artifactId>cucumber-java</artifactId>
-			<version>6.6.0</version>
-		</dependency>
-		<!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-testng -->
-		<dependency>
-			<groupId>io.cucumber</groupId>
-			<artifactId>cucumber-testng</artifactId>
-			<version>6.9.0</version>
-		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/com.microsoft.sqlserver/mssql-jdbc -->
 		<dependency>
@@ -70,7 +58,20 @@
 			<artifactId>mssql-jdbc</artifactId>
 			<version>9.2.1.jre8</version>
 		</dependency>
+		<dependency>
+			<groupId>com.intuit.karate</groupId>
+			<artifactId>karate-apache</artifactId>
+			<version>0.9.5</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.intuit.karate</groupId>
+			<artifactId>karate-junit4</artifactId>
+			<version>0.9.5</version>
+			<scope>test</scope>
+		</dependency>
 
+	
 
 
 	</dependencies>
