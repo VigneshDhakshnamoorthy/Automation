@@ -3,12 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="interview.sample.test_method_name">
+      <class name="api.samples.swagger_test_api">
         <methods>
-          <include name="test3"/>
-          <include name="test2"/>
+          <include name="api1_test"/>
         </methods>
-      </class> <!-- interview.sample.test_method_name -->
+      </class> <!-- api.samples.swagger_test_api -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
