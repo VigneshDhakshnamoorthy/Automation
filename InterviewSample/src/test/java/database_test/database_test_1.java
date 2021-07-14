@@ -36,8 +36,11 @@ public class database_test_1 {
 
 
           while (rs.next()) {
-                System.out.println(rs.getString("SCHEME_NAME")+" - "+rs.getString("ORIGINAL_PRICE"));
-            }
+        	  if (rs.getDouble("ORIGINAL_PRICE") > 0 && rs.getString("SCHEME_NAME").contains("ANDROID")) {
+                System.out.println(rs.getString("SCHEME_NAME")+" - "+rs.getDouble("ORIGINAL_PRICE"));
+            
+        	  }
+        	  }
         }
 
         catch (SQLException e) {
