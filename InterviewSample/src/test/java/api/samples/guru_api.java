@@ -2,7 +2,10 @@ package api.samples;
 
 import static io.restassured.RestAssured.*;
 
+import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
+
+import io.restassured.http.ContentType;
 
 public class guru_api {
 	public static void main(String[] args) {
@@ -64,7 +67,9 @@ public class guru_api {
 	public static void getSpecificPartOfResponseBody(){
 		System.out.println();
 		System.out.println("----------result.statements.AMOUNT----------");
-
+		ArrayList<String> amounts = given().accept(ContentType.XML).when().get(url)
+				.then().extract().path("result.statements.AMOUNT");
+		System.out.println(amounts);
 	
 
 	

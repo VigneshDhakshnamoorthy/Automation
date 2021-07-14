@@ -24,14 +24,9 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/vignesh/.m2/repository/com/intuit/karate/karate-junit4/0.9.5/karate-junit4-0.9.5.jar" sourcepath="C:/Users/vignesh/.m2/repository/com/intuit/karate/karate-junit4/0.9.5/karate-junit4-0.9.5-sources.jar">
+	<classpathentry excluding="**" kind="src" output="target/classes" path="src/main/resources">
 		<attributes>
 			<attribute name="maven.pomderived" value="true"/>
-			<attribute name="test" value="true"/>
-			<attribute name="maven.groupId" value="com.intuit.karate"/>
-			<attribute name="maven.artifactId" value="karate-junit4"/>
-			<attribute name="maven.version" value="0.9.5"/>
-			<attribute name="maven.scope" value="test"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="output" path="target/classes"/>

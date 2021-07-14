@@ -58,12 +58,7 @@
 			<artifactId>mssql-jdbc</artifactId>
 			<version>9.2.1.jre8</version>
 		</dependency>
-		<dependency>
-			<groupId>com.intuit.karate</groupId>
-			<artifactId>karate-apache</artifactId>
-			<version>0.9.5</version>
-			<scope>test</scope>
-		</dependency>
+
 		<dependency>
 			<groupId>com.intuit.karate</groupId>
 			<artifactId>karate-apache</artifactId>
@@ -78,6 +73,7 @@
 		</dependency>
 
 
+
 	</dependencies>
 
 	<build>
@@ -90,7 +86,7 @@
 			</testResource>
 		</testResources>
 		<plugins>
-	
+
 		</plugins>
 	</build>
 
