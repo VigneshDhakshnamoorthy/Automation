@@ -1,4 +1,4 @@
-package interview.sample;
+package excel;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -25,7 +25,7 @@ public class excel_handle {
 		WebDriverManager.firefoxdriver().setup();
 		driver = new FirefoxDriver(firefoxOptions);
 		driver.get("https://money.rediff.com/gainers/bse/daily/groupz");
-		List<WebElement> table1  = driver.findElements(By.xpath("//table[@class=\"dataTable\"]/tbody/tr/td/a"));
+		List<WebElement> table1  = driver.findElements(By.xpath("//table[@class='dataTable']/tbody/tr/td/a"));
 
 		XSSFWorkbook workbook = new XSSFWorkbook();
         XSSFSheet sheet = workbook.createSheet("rediff");
@@ -38,10 +38,12 @@ public class excel_handle {
         	
         	
         }
-        workbook.close();
-        driver.quit();
+
         FileOutputStream rediff_excel = new FileOutputStream(File_loc);
 		workbook.write(rediff_excel);
+        workbook.close();
+        driver.quit();
+
 		
 		File read_ex = new File(File_loc);
 		FileInputStream read_exc = new FileInputStream(read_ex);
