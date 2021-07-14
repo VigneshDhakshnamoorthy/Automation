@@ -34,8 +34,9 @@ public class database_test_1 {
             
             ResultSet rs = stmt.executeQuery(SQL);
 
+
           while (rs.next()) {
-                System.out.println(rs.getString("SCHEME_NAME"));
+                System.out.println(rs.getString("SCHEME_NAME")+" - "+rs.getString("ORIGINAL_PRICE"));
             }
         }
 
